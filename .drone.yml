@@ -1,8 +1,14 @@
+clone:
+  git:
+    image: plugins/git:next
+
 pipeline:
   greenkeeper_update_lockfile:
     image: node:9
     commands:
       - printenv
+      - git status
+      - git branch
       - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#c46c832725468b9b8540c092aa40abd4563ffa0f
       - greenkeeper-lockfile-update
 #    when:
