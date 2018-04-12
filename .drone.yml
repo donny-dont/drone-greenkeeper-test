@@ -1,0 +1,27 @@
+pipeline:
+  greenkeeper_update_lockfile:
+    image: node:9
+    commands:
+      - printenv
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#4053f3dc5e2f94608c292db57417531fce2f5e2e
+      - greenkeeper-lockfile-update
+#    when:
+#      branch: greenkeeper*
+        
+  build:
+    image: node:9
+    commands:
+      - printenv
+      - echo 'HELLO WORLD I R DRONE'
+      - npm i -g npm@latest
+      - npm ci
+    environment:
+      - TEST=foo-${NODE_VERSION}.tar
+      
+  greenkeeper_lockfile_upload:
+    image: node:9
+    commands:
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#4053f3dc5e2f94608c292db57417531fce2f5e2e
+      - greenkeeper-lockfile-upload
+#    when:
+#      branch: greenkeeper*

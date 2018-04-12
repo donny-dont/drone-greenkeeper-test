@@ -1,0 +1,22 @@
+{
+  "name": "drone-greenkeeper-test",
+  "version": "1.0.0",
+  "description": "Testing drone with greenkeeper support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donny-dont/drone-greenkeeper-test.git"
+  },
+  "author": "Don Olmstead",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donny-dont/drone-greenkeeper-test/issues"
+  },
+  "homepage": "https://github.com/donny-dont/drone-greenkeeper-test#readme",
+  "dependencies": {
+    "sinon": "^2.2.0"
+  }
+}
