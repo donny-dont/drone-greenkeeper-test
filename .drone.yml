@@ -9,8 +9,6 @@ pipeline:
       - printenv
       - git status
       - git branch
-      - git fetch --all
-      - git checkout ${DRONE_COMMIT_BRANCH}
       - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#c46c832725468b9b8540c092aa40abd4563ffa0f
       - greenkeeper-lockfile-update
 #    when:
