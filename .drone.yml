@@ -21,6 +21,7 @@ pipeline:
   greenkeeper_lockfile_upload:
     image: node:9
     commands:
+      - git rev-parse --abbrev-ref HEAD
       - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#4053f3dc5e2f94608c292db57417531fce2f5e2e
       - greenkeeper-lockfile-upload
 #    when:
