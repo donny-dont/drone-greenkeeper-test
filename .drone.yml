@@ -4,10 +4,10 @@ pipeline:
     commands:
       - printenv
       - npm i -g npm@latest
-      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#9ec3e23111db43a8cb23b5cbfa683be926abcfe0
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#4edd3391f956fd1288bff8195af2ea74a678cfdc
       - greenkeeper-lockfile-update
-#    when:
-#      branch: greenkeeper*
+    when:
+      branch: greenkeeper*
         
   build:
     image: node:9
@@ -24,7 +24,7 @@ pipeline:
     secrets: [gh_token]
     commands:
       - git rev-parse --abbrev-ref HEAD
-      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#9ec3e23111db43a8cb23b5cbfa683be926abcfe0
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#4edd3391f956fd1288bff8195af2ea74a678cfdc
       - greenkeeper-lockfile-upload
-#    when:
-#      branch: greenkeeper*
+    when:
+      branch: greenkeeper*
