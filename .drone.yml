@@ -1,15 +1,10 @@
-clone:
-  git:
-    image: plugins/git:next
-
 pipeline:
   greenkeeper_update_lockfile:
     image: node:9
     commands:
       - printenv
-      - git status
-      - git branch
-      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#c46c832725468b9b8540c092aa40abd4563ffa0f
+      - npm i -g npm@latest
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#9ec3e23111db43a8cb23b5cbfa683be926abcfe0
       - greenkeeper-lockfile-update
 #    when:
 #      branch: greenkeeper*
@@ -26,9 +21,10 @@ pipeline:
       
   greenkeeper_lockfile_upload:
     image: node:9
+    secrets: [gh_token]
     commands:
       - git rev-parse --abbrev-ref HEAD
-      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#c46c832725468b9b8540c092aa40abd4563ffa0f
+      - npm install -g git+https://github.com/donny-dont/greenkeeper-lockfile.git#9ec3e23111db43a8cb23b5cbfa683be926abcfe0
       - greenkeeper-lockfile-upload
 #    when:
 #      branch: greenkeeper*
