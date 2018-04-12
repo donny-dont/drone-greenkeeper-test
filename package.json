@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/donny-dont/drone-greenkeeper-test#readme",
   "dependencies": {
+    "grunt": "^0.4.5",
     "sinon": "^2.2.0"
   }
 }
