@@ -1,12 +1,14 @@
 pipeline:
   greenkeeper_update_lockfile:
     image: plugins/greenkeeper
+    pull: true
     update: true
     when:
       branch: greenkeeper/*
         
   build:
     image: node:10
+    pull: true
     commands:
       - npm i -g npm@latest
       - npm ci
