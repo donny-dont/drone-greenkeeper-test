@@ -3,8 +3,6 @@ pipeline:
     image: plugins/greenkeeper
     pull: true
     update: true
-    when:
-      branch: greenkeeper/*
         
   build:
     image: node:10
@@ -19,5 +17,3 @@ pipeline:
     secrets: 
       - source: gh_token
         target: gk_token
-    when:
-      branch: greenkeeper/*
