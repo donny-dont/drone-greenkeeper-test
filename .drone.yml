@@ -8,7 +8,7 @@ pipeline:
     image: node:10
     pull: true
     commands:
-      - npm i -g npm@latest
+      - npm --version
       - npm ci
       
   greenkeeper_lockfile_upload:
