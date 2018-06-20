@@ -12,6 +12,9 @@ pipeline:
       - npm i -g npm@latest
       - npm ci
       
+  coverage:
+    image: plugins/coverage
+      
   greenkeeper_lockfile_upload:
     image: plugins/greenkeeper
     upload: true
