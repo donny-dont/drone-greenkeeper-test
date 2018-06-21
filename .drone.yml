@@ -15,6 +15,8 @@ pipeline:
   coverage:
     image: plugins/coverage
     pull: true
+    commands:
+      - publish
       
   greenkeeper_lockfile_upload:
     image: plugins/greenkeeper
