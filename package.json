@@ -18,6 +18,6 @@
   "homepage": "https://github.com/donny-dont/drone-greenkeeper-test#readme",
   "dependencies": {
     "grunt": "^0.4.5",
-    "sinon": "^4.4.9"
+    "sinon": "^7.2.5"
   }
 }
